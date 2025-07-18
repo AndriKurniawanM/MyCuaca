@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Pastikan hanya satu style dengan nama Theme.MyCuaca -->
+    <style name="Theme.MyCuaca" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Sesuaikan jika Anda pakai AppCompat saja -->
+        <!-- parent="Theme.AppCompat.Light.NoActionBar" -->
 
-    <style name="Theme.MyCuaca" parent="android:Theme.Material.Light.NoActionBar" />
+        <!-- warna tema -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_variant</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+
+        <!-- latar belakang window -->
+        <item name="android:windowBackground">@color/background</item>
+        <!-- status bar / navigation bar bisa ditambah di sini jika perlu -->
+    </style>
 </resources>
