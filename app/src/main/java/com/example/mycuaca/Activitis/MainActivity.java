@@ -4,14 +4,14 @@ import android.os.Bundle;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import androidx.appcompat.app.AppCompatActivity;
 import com.example.mycuaca.Adapters.HourlyAdapters;
 import com.example.mycuaca.Domains.Hourly;
 import com.example.mycuaca.R;
 
 import java.util.ArrayList;
 
-public class MainActivity extends android.app.Activity {
+public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapterHourly;
     private RecyclerView recyclerView;
     @Override

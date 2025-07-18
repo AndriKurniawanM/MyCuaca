@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Activitis.MainActivity" >
+    tools:context=".Activitis.MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
+            <!-- Judul Cuaca -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -29,71 +31,74 @@
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
+            <!-- Icon Cuaca -->
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/cloudy_sunny"
-                />
+                android:src="@drawable/cloudy_sunny" />
 
+            <!-- Waktu -->
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/textViewTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="Jumat 18 | 18:00 AM"
                 android:textAlignment="center"
                 android:textSize="19sp"
-                android:textColor="@color/white"
-                android:layout_marginTop="8dp"
+                android:textColor="@color/white" />
 
-                />
-
+            <!-- Suhu -->
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textViewTemp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="25°"
                 android:textColor="@color/white"
-                android:textSize="63dp"
+                android:textSize="63sp"
                 android:textAlignment="center"
                 android:textStyle="bold"
-                />
+                android:layout_marginTop="8dp" />
 
+            <!-- High / Low -->
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textViewHL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="H:27 | L:18"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                />
+                android:layout_marginTop="4dp" />
 
+            <!-- Info Detail: Hujan, Angin, Kelembapan -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:background="@drawable/background2"
                 android:orientation="horizontal">
 
+                <!-- Hujan -->
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="16dp"
-                    android:layout_weight="0.333"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="8dp">
 
                     <ImageView
-                        android:id="@+id/imageView2"
+                        android:id="@+id/imageRain"
                         android:layout_width="34dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:src="@drawable/rain" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/textRainPct"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="22%"
@@ -102,7 +107,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/textRainLabel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Hujan"
@@ -110,22 +115,23 @@
                         android:textColor="@color/white" />
                 </LinearLayout>
 
+                <!-- Angin -->
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="16dp"
-                    android:layout_weight="0.333"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="8dp">
 
                     <ImageView
-                        android:id="@+id/imageView2"
+                        android:id="@+id/imageWind"
                         android:layout_width="34dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:src="@drawable/wind" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/textWindSpeed"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="12 km/h"
@@ -134,7 +140,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/textWindLabel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Kecepatan Angin"
@@ -142,22 +148,23 @@
                         android:textColor="@color/white" />
                 </LinearLayout>
 
+                <!-- Kelembapan -->
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="16dp"
-                    android:layout_weight="0.333"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="8dp">
 
                     <ImageView
-                        android:id="@+id/imageView2"
+                        android:id="@+id/imageHumidity"
                         android:layout_width="34dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:src="@drawable/humidity" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/textHumidityPct"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="18%"
@@ -166,7 +173,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/textHumidityLabel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Kelembapan"
@@ -175,40 +182,41 @@
                 </LinearLayout>
 
             </LinearLayout>
+
+            <!-- Header Forecast -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textToday"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Hari Ini"
                     android:textStyle="bold"
                     android:textColor="#DCA900"
-                    android:textSize="20sp"
-                    android:layout_marginStart="16dp"
-                    />
+                    android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/textNext7Days"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:textColor="@color/white"
-                    android:text="7 Hari Berikutnya" />
-
+                    android:text="7 Hari Berikutnya"
+                    android:textColor="@color/white" />
             </LinearLayout>
+
+            <!-- RecyclerView Forecast -->
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/view1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:clipToPadding="false"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:id="@+id/view1"
-                />
-        </LinearLayout>>
+                android:paddingEnd="16dp" />
+
+        </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
